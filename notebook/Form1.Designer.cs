@@ -44,7 +44,7 @@ namespace notebook
             this.DeleteButton = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutUsButton = new System.Windows.Forms.ToolStripMenuItem();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.fieldEdit = new System.Windows.Forms.RichTextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip1.SuspendLayout();
@@ -77,31 +77,31 @@ namespace notebook
             // CreateButton
             // 
             this.CreateButton.Name = "CreateButton";
-            this.CreateButton.Size = new System.Drawing.Size(180, 22);
+            this.CreateButton.Size = new System.Drawing.Size(163, 22);
             this.CreateButton.Text = "Создать...";
             // 
             // OpenButton
             // 
             this.OpenButton.Name = "OpenButton";
-            this.OpenButton.Size = new System.Drawing.Size(180, 22);
+            this.OpenButton.Size = new System.Drawing.Size(163, 22);
             this.OpenButton.Text = "Открыть";
             // 
             // SaveButton
             // 
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(180, 22);
+            this.SaveButton.Size = new System.Drawing.Size(163, 22);
             this.SaveButton.Text = "Сохранить";
             // 
             // SaveAsButton
             // 
             this.SaveAsButton.Name = "SaveAsButton";
-            this.SaveAsButton.Size = new System.Drawing.Size(180, 22);
+            this.SaveAsButton.Size = new System.Drawing.Size(163, 22);
             this.SaveAsButton.Text = "Сохранить как...";
             // 
             // ExitButton
             // 
             this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Size = new System.Drawing.Size(180, 22);
+            this.ExitButton.Size = new System.Drawing.Size(163, 22);
             this.ExitButton.Text = "Выход";
             // 
             // правкаToolStripMenuItem
@@ -160,16 +160,16 @@ namespace notebook
             this.AboutUsButton.Size = new System.Drawing.Size(149, 22);
             this.AboutUsButton.Text = "О программе";
             // 
-            // richTextBox1
+            // fieldEdit
             // 
-            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.fieldEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox1.Location = new System.Drawing.Point(0, 27);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(800, 428);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
+            this.fieldEdit.Location = new System.Drawing.Point(0, 27);
+            this.fieldEdit.Name = "fieldEdit";
+            this.fieldEdit.Size = new System.Drawing.Size(800, 428);
+            this.fieldEdit.TabIndex = 2;
+            this.fieldEdit.Text = "";
             // 
             // openFileDialog1
             // 
@@ -180,7 +180,7 @@ namespace notebook
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 455);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.fieldEdit);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -199,7 +199,7 @@ namespace notebook
         private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem правкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox fieldEdit;
         private System.Windows.Forms.ToolStripMenuItem CreateButton;
         private System.Windows.Forms.ToolStripMenuItem OpenButton;
         private System.Windows.Forms.ToolStripMenuItem SaveButton;
