@@ -45,6 +45,8 @@ namespace notebook
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutUsButton = new System.Windows.Forms.ToolStripMenuItem();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -117,31 +119,31 @@ namespace notebook
             // CancelButton
             // 
             this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(180, 22);
+            this.CancelButton.Size = new System.Drawing.Size(139, 22);
             this.CancelButton.Text = "Отменить";
             // 
             // CutButton
             // 
             this.CutButton.Name = "CutButton";
-            this.CutButton.Size = new System.Drawing.Size(180, 22);
+            this.CutButton.Size = new System.Drawing.Size(139, 22);
             this.CutButton.Text = "Вырезать";
             // 
             // CopyButton
             // 
             this.CopyButton.Name = "CopyButton";
-            this.CopyButton.Size = new System.Drawing.Size(180, 22);
+            this.CopyButton.Size = new System.Drawing.Size(139, 22);
             this.CopyButton.Text = "Копировать";
             // 
             // PasteButton
             // 
             this.PasteButton.Name = "PasteButton";
-            this.PasteButton.Size = new System.Drawing.Size(180, 22);
+            this.PasteButton.Size = new System.Drawing.Size(139, 22);
             this.PasteButton.Text = "Вставить";
             // 
             // DeleteButton
             // 
             this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(180, 22);
+            this.DeleteButton.Size = new System.Drawing.Size(139, 22);
             this.DeleteButton.Text = "Удалить";
             // 
             // справкаToolStripMenuItem
@@ -155,7 +157,7 @@ namespace notebook
             // AboutUsButton
             // 
             this.AboutUsButton.Name = "AboutUsButton";
-            this.AboutUsButton.Size = new System.Drawing.Size(180, 22);
+            this.AboutUsButton.Size = new System.Drawing.Size(149, 22);
             this.AboutUsButton.Text = "О программе";
             // 
             // richTextBox1
@@ -168,6 +170,10 @@ namespace notebook
             this.richTextBox1.Size = new System.Drawing.Size(800, 428);
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Form1
             // 
@@ -205,6 +211,8 @@ namespace notebook
         private System.Windows.Forms.ToolStripMenuItem PasteButton;
         private System.Windows.Forms.ToolStripMenuItem DeleteButton;
         private System.Windows.Forms.ToolStripMenuItem AboutUsButton;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 

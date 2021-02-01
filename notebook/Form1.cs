@@ -12,9 +12,14 @@ namespace notebook
 {
     public partial class Form1 : Form
     {
+        public string currentFileName;
+
         public Form1()
         {
             InitializeComponent();
+            currentFileName = "Безымянный";
+            Form1 form = new Form1();
+            form.Text = currentFileName + " - " + "Notebook version 0.0.1";
         }
     }
 }
