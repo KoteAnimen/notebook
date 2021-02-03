@@ -79,6 +79,7 @@ namespace notebook
             this.CreateButton.Name = "CreateButton";
             this.CreateButton.Size = new System.Drawing.Size(180, 22);
             this.CreateButton.Text = "Создать...";
+            this.CreateButton.Click += new System.EventHandler(this.CreateButton_Click);
             // 
             // OpenButton
             // 
@@ -98,6 +99,7 @@ namespace notebook
             this.SaveAsButton.Name = "SaveAsButton";
             this.SaveAsButton.Size = new System.Drawing.Size(180, 22);
             this.SaveAsButton.Text = "Сохранить как...";
+            this.SaveAsButton.Click += new System.EventHandler(this.SaveAsButton_Click);
             // 
             // ExitButton
             // 

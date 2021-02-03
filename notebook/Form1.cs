@@ -13,19 +13,30 @@ namespace notebook
 {
     public partial class Form1 : Form
     {
-        public string head = "" + " - " + "Notebook version 0.0.1";        
-
+        public string head = "" + " - " + "Notebook version 0.0.1";
+        Notebook notebook;
         public Form1()
         {
             InitializeComponent();                      
             this.Text = head;
+            notebook = new Notebook(fieldEdit);
         }
-
+        
         private void SaveButton_Click(object sender, EventArgs e)
-        {
-            Notebook notebook = new Notebook(fieldEdit);             
+        {                        
             notebook.Save(ref head);
             this.Text = head;
+        }
+
+        private void SaveAsButton_Click(object sender, EventArgs e)
+        {
+            notebook.SaveAs(ref head);
+            this.Text = head;
+        }
+
+        private void CreateButton_Click(object sender, EventArgs e)
+        {
+            notebook.Create();
         }
     }
 }
@@ -82,8 +93,15 @@ public class Notebook
     {
         
         if(ASaveBloknot() == true)
+        {            
+            formText = nameFile + " - " + "Notebook version 0.0.1";
+        }
+    }
+    public void SaveAs(ref string formText)
+    {
+        nameFile = "";
+        if(ASaveBloknot() == true)
         {
-            
             formText = nameFile + " - " + "Notebook version 0.0.1";
         }
     }
