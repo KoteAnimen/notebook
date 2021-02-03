@@ -7,38 +7,98 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using notebook;
 
 namespace notebook
 {
     public partial class Form1 : Form
     {
-        public string currentFileName;        
+        public string head = "" + " - " + "Notebook version 0.0.1";        
 
         public Form1()
         {
-            InitializeComponent();
-            currentFileName = "Безымянный";            
-            this.Text = currentFileName + " - " + "Notebook version 0.0.1";
+            InitializeComponent();                      
+            this.Text = head;
         }
-        public bool ASaveBloknot(RichTextBox fieldEdit, ref string fileName)
+
+        private void SaveButton_Click(object sender, EventArgs e)
         {
-            SaveFileDialog sd = new SaveFileDialog();
-            sd.DefaultExt = "rtf";
-            sd.Filter = "Текстовый файл (*.rtf)|*rtf|Все файлы(*.*)|*.*";
-            if(fileName == "")
-            {
-                if (sd.ShowDialog() == DialogResult.OK)
-                {
-                    fileName = sd.FileName;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            fieldEdit.SaveFile(fileName);
-            fieldEdit.Modified = false;
-            return true;
+            Notebook notebook = new Notebook(fieldEdit);             
+            notebook.Save(ref head);
+            this.Text = head;
         }
+    }
+}
+
+public class Notebook
+{
+    string nameFile;
+    RichTextBox fieldEdit;
+
+    public string NameFile
+    {
+        get { return nameFile; }
+    }
+
+    public Notebook(RichTextBox fieldEdit)
+    {
+        nameFile = "";
+        this.fieldEdit = fieldEdit;
+    }
+
+    public bool ASaveBloknot()
+    {
+        SaveFileDialog sd = new SaveFileDialog();
+        sd.DefaultExt = "rtf";
+        sd.Filter = "Текстовый файл (*.rtf)|*rtf|Все файлы(*.*)|*.*";
+        if (nameFile == "")
+        {
+            if (sd.ShowDialog() == DialogResult.OK)
+            {
+                nameFile = sd.FileName;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        fieldEdit.SaveFile(nameFile);
+        fieldEdit.Modified = false;
+        return true;
+    }
+
+    public void Create()
+    {
+        if (fieldEdit.Modified == true)
+        {
+            ShowSaveMessage();
+            fieldEdit.Clear();
+            nameFile = "";
+            fieldEdit.Modified = false;
+        }
+    }
+
+    public void Save(ref string formText)
+    {
+        
+        if(ASaveBloknot() == true)
+        {
+            
+            formText = nameFile + " - " + "Notebook version 0.0.1";
+        }
+    }
+
+    public void ShowSaveMessage()
+    {
+        DialogResult result;
+        result = MessageBox.Show("Вы хотите сохранить изменения в файле?", "Блокнот", MessageBoxButtons.YesNoCancel);
+        if (result == DialogResult.Yes)
+        {
+            if (ASaveBloknot() == false) return;
+        }
+        if (result == DialogResult.Cancel)
+        {
+            return;
+        }        
     }
 }

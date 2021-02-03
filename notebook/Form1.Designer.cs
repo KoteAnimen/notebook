@@ -77,31 +77,32 @@ namespace notebook
             // CreateButton
             // 
             this.CreateButton.Name = "CreateButton";
-            this.CreateButton.Size = new System.Drawing.Size(163, 22);
+            this.CreateButton.Size = new System.Drawing.Size(180, 22);
             this.CreateButton.Text = "Создать...";
             // 
             // OpenButton
             // 
             this.OpenButton.Name = "OpenButton";
-            this.OpenButton.Size = new System.Drawing.Size(163, 22);
+            this.OpenButton.Size = new System.Drawing.Size(180, 22);
             this.OpenButton.Text = "Открыть";
             // 
             // SaveButton
             // 
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(163, 22);
+            this.SaveButton.Size = new System.Drawing.Size(180, 22);
             this.SaveButton.Text = "Сохранить";
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // SaveAsButton
             // 
             this.SaveAsButton.Name = "SaveAsButton";
-            this.SaveAsButton.Size = new System.Drawing.Size(163, 22);
+            this.SaveAsButton.Size = new System.Drawing.Size(180, 22);
             this.SaveAsButton.Text = "Сохранить как...";
             // 
             // ExitButton
             // 
             this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Size = new System.Drawing.Size(163, 22);
+            this.ExitButton.Size = new System.Drawing.Size(180, 22);
             this.ExitButton.Text = "Выход";
             // 
             // правкаToolStripMenuItem
