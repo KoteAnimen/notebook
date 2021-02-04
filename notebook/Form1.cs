@@ -43,14 +43,7 @@ namespace notebook
         {
             notebook.Open(ref head);
             this.Text = head;
-        }
-
-        private void ExitButton_Click(object sender, EventArgs e)//здесь баг
-        {
-            bool exit = true;
-            notebook.Exit(ref exit);
-            if (exit == true) this.Close();
-        }
+        }        
 
         private void ExitForm(object sender, FormClosingEventArgs e)
         {
