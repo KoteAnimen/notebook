@@ -46,8 +46,10 @@ namespace notebook
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
-        {            
-            if (notebook.Exit() == true) this.Close();            
+        {
+            bool exit = true;
+            notebook.Exit(ref exit);
+            if (exit == true) this.Close();
         }
 
         private void ExitForm(object sender, FormClosingEventArgs e)
@@ -184,17 +186,8 @@ public class Notebook
         {
             ShowSaveMessage(ref exit);
         }        
-    }
-
-    public bool Exit()
-    {
-        bool exit = true;
-        if (fieldEdit.Modified == true)
-        {
-            ShowSaveMessage(ref exit);            
-        }
-        return exit;
-    }
+    }    
+    
 
     public void ShowSaveMessage()
     {
