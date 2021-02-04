@@ -46,11 +46,8 @@ namespace notebook
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
-        {
-            bool exit = false;
-            if (!exit) this.Close();
-            notebook.Exit(ref exit);
-            
+        {            
+            if (notebook.Exit() == true) this.Close();            
         }
 
         private void ExitForm(object sender, FormClosingEventArgs e)
@@ -58,6 +55,31 @@ namespace notebook
             bool exit = false;
             notebook.Exit(ref exit);
             e.Cancel = exit;
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            fieldEdit.Undo();
+        }
+
+        private void CutButton_Click(object sender, EventArgs e)
+        {
+            fieldEdit.Cut();
+        }
+
+        private void PasteButton_Click(object sender, EventArgs e)
+        {
+            fieldEdit.Paste();
+        }
+
+        private void CopyButton_Click(object sender, EventArgs e)
+        {
+            fieldEdit.Copy();
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            fieldEdit.SelectedText = "";
         }
     }
 }
@@ -162,6 +184,16 @@ public class Notebook
         {
             ShowSaveMessage(ref exit);
         }        
+    }
+
+    public bool Exit()
+    {
+        bool exit = true;
+        if (fieldEdit.Modified == true)
+        {
+            ShowSaveMessage(ref exit);            
+        }
+        return exit;
     }
 
     public void ShowSaveMessage()

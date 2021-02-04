@@ -77,35 +77,35 @@ namespace notebook
             // CreateButton
             // 
             this.CreateButton.Name = "CreateButton";
-            this.CreateButton.Size = new System.Drawing.Size(180, 22);
+            this.CreateButton.Size = new System.Drawing.Size(162, 22);
             this.CreateButton.Text = "Создать...";
             this.CreateButton.Click += new System.EventHandler(this.CreateButton_Click);
             // 
             // OpenButton
             // 
             this.OpenButton.Name = "OpenButton";
-            this.OpenButton.Size = new System.Drawing.Size(180, 22);
+            this.OpenButton.Size = new System.Drawing.Size(162, 22);
             this.OpenButton.Text = "Открыть";
             this.OpenButton.Click += new System.EventHandler(this.OpenButton_Click);
             // 
             // SaveButton
             // 
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(180, 22);
+            this.SaveButton.Size = new System.Drawing.Size(162, 22);
             this.SaveButton.Text = "Сохранить";
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // SaveAsButton
             // 
             this.SaveAsButton.Name = "SaveAsButton";
-            this.SaveAsButton.Size = new System.Drawing.Size(180, 22);
+            this.SaveAsButton.Size = new System.Drawing.Size(162, 22);
             this.SaveAsButton.Text = "Сохранить как...";
             this.SaveAsButton.Click += new System.EventHandler(this.SaveAsButton_Click);
             // 
             // ExitButton
             // 
             this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Size = new System.Drawing.Size(180, 22);
+            this.ExitButton.Size = new System.Drawing.Size(162, 22);
             this.ExitButton.Text = "Выход";
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
@@ -124,32 +124,37 @@ namespace notebook
             // CancelButton
             // 
             this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(139, 22);
+            this.CancelButton.Size = new System.Drawing.Size(180, 22);
             this.CancelButton.Text = "Отменить";
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // CutButton
             // 
             this.CutButton.Name = "CutButton";
-            this.CutButton.Size = new System.Drawing.Size(139, 22);
+            this.CutButton.Size = new System.Drawing.Size(180, 22);
             this.CutButton.Text = "Вырезать";
+            this.CutButton.Click += new System.EventHandler(this.CutButton_Click);
             // 
             // CopyButton
             // 
             this.CopyButton.Name = "CopyButton";
-            this.CopyButton.Size = new System.Drawing.Size(139, 22);
+            this.CopyButton.Size = new System.Drawing.Size(180, 22);
             this.CopyButton.Text = "Копировать";
+            this.CopyButton.Click += new System.EventHandler(this.CopyButton_Click);
             // 
             // PasteButton
             // 
             this.PasteButton.Name = "PasteButton";
-            this.PasteButton.Size = new System.Drawing.Size(139, 22);
+            this.PasteButton.Size = new System.Drawing.Size(180, 22);
             this.PasteButton.Text = "Вставить";
+            this.PasteButton.Click += new System.EventHandler(this.PasteButton_Click);
             // 
             // DeleteButton
             // 
             this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(139, 22);
+            this.DeleteButton.Size = new System.Drawing.Size(180, 22);
             this.DeleteButton.Text = "Удалить";
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // справкаToolStripMenuItem
             // 
