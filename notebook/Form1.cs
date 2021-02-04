@@ -135,7 +135,7 @@ public class Notebook
         }
         if (AOpenBloknot() == true)
         {
-            formText = nameFile;
+            formText = nameFile + " - " + "Notebook version 0.0.1";
         }
         else AOpenBloknot();   
 
