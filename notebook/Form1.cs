@@ -45,7 +45,7 @@ namespace notebook
             this.Text = head;
         }
 
-        private void ExitButton_Click(object sender, EventArgs e)
+        private void ExitButton_Click(object sender, EventArgs e)//здесь баг
         {
             bool exit = true;
             notebook.Exit(ref exit);
