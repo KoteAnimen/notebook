@@ -38,6 +38,12 @@ namespace notebook
         {
             notebook.Create();
         }
+
+        private void OpenButton_Click(object sender, EventArgs e)
+        {
+            notebook.Open(ref head);
+            this.Text = head;
+        }
     }
 }
 
@@ -104,6 +110,35 @@ public class Notebook
         {
             formText = nameFile + " - " + "Notebook version 0.0.1";
         }
+    }
+    public bool AOpenBloknot()
+    {
+        OpenFileDialog od = new OpenFileDialog();
+        od.DefaultExt = "rtf";
+        od.Filter = "Текстовый файл (*.rtf)|*rtf|Все файлы(*.*)|*.*";
+        if (od.ShowDialog() == DialogResult.OK)
+        {
+            nameFile = od.FileName;
+            fieldEdit.LoadFile(nameFile);
+            fieldEdit.Modified = false;
+            return true;
+        }
+        else return false;
+
+    }
+
+    public void Open(ref string formText)
+    {
+        if(fieldEdit.Modified == true)
+        {
+            ShowSaveMessage();//тут поосторожнее            
+        }
+        if (AOpenBloknot() == true)
+        {
+            formText = nameFile;
+        }
+        else AOpenBloknot();   
+
     }
 
     public void ShowSaveMessage()

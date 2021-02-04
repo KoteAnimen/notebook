@@ -86,6 +86,7 @@ namespace notebook
             this.OpenButton.Name = "OpenButton";
             this.OpenButton.Size = new System.Drawing.Size(180, 22);
             this.OpenButton.Text = "Открыть";
+            this.OpenButton.Click += new System.EventHandler(this.OpenButton_Click);
             // 
             // SaveButton
             // 
