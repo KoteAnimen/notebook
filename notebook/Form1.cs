@@ -44,6 +44,21 @@ namespace notebook
             notebook.Open(ref head);
             this.Text = head;
         }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            bool exit = false;
+            if (!exit) this.Close();
+            notebook.Exit(ref exit);
+            
+        }
+
+        private void ExitForm(object sender, FormClosingEventArgs e)
+        {
+            bool exit = false;
+            notebook.Exit(ref exit);
+            e.Cancel = exit;
+        }
     }
 }
 
@@ -141,6 +156,14 @@ public class Notebook
 
     }
 
+    public void Exit(ref bool exit)
+    {
+        if (fieldEdit.Modified == true)
+        {
+            ShowSaveMessage(ref exit);
+        }        
+    }
+
     public void ShowSaveMessage()
     {
         DialogResult result;
@@ -152,6 +175,19 @@ public class Notebook
         if (result == DialogResult.Cancel)
         {
             return;
+        }        
+    }
+    public void ShowSaveMessage(ref bool exit)
+    {
+        DialogResult result;
+        result = MessageBox.Show("Вы хотите сохранить изменения в файле?", "Блокнот", MessageBoxButtons.YesNoCancel);
+        if (result == DialogResult.Yes)
+        {
+            if (ASaveBloknot() == false)  exit = false;
+        }
+        if (result == DialogResult.Cancel)
+        {
+            exit = true; ;
         }        
     }
 }

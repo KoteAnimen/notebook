@@ -107,6 +107,7 @@ namespace notebook
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(180, 22);
             this.ExitButton.Text = "Выход";
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // правкаToolStripMenuItem
             // 
@@ -190,6 +191,7 @@ namespace notebook
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Notebook version 0.0.1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ExitForm);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
