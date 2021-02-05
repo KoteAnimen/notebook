@@ -76,6 +76,12 @@ namespace notebook
         {
             fieldEdit.SelectedText = "";
         }
+
+        private void AboutUsButton_Click(object sender, EventArgs e)
+        {
+            AboutBox1 aboutUs = new AboutBox1();
+            aboutUs.ShowDialog();
+        }
     }
 }
 
@@ -121,6 +127,12 @@ public class Notebook
         if (fieldEdit.Modified == true)
         {
             ShowSaveMessage();
+            fieldEdit.Clear();
+            nameFile = "";
+            fieldEdit.Modified = false;
+        }
+        else
+        {
             fieldEdit.Clear();
             nameFile = "";
             fieldEdit.Modified = false;
