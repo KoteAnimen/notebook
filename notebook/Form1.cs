@@ -13,7 +13,7 @@ namespace notebook
 {
     public partial class Form1 : Form
     {
-        public string head = "" + " - " + "Notebook version 0.0.1";
+        public string head = "" + " - " + "Notebook version 0.9.0.0";
         Notebook notebook;
         public Form1()
         {
@@ -144,7 +144,7 @@ public class Notebook
         
         if(ASaveBloknot() == true)
         {            
-            formText = nameFile + " - " + "Notebook version 0.0.1";
+            formText = nameFile + " - " + "Notebook version 0.9.0.0";
         }
     }
     public void SaveAs(ref string formText)
@@ -152,7 +152,7 @@ public class Notebook
         nameFile = "";
         if(ASaveBloknot() == true)
         {
-            formText = nameFile + " - " + "Notebook version 0.0.1";
+            formText = nameFile + " - " + "Notebook version 0.9.0.0";
         }
     }
     public bool AOpenBloknot()
@@ -179,7 +179,7 @@ public class Notebook
         }
         if (AOpenBloknot() == true)
         {
-            formText = nameFile + " - " + "Notebook version 0.0.1";
+            formText = nameFile + " - " + "Notebook version 0.9.0.0";
         }
         else AOpenBloknot();   
 

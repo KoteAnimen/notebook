@@ -29,6 +29,7 @@ namespace notebook
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CreateButton = new System.Windows.Forms.ToolStripMenuItem();
@@ -158,7 +159,7 @@ namespace notebook
             // AboutUsButton
             // 
             this.AboutUsButton.Name = "AboutUsButton";
-            this.AboutUsButton.Size = new System.Drawing.Size(180, 22);
+            this.AboutUsButton.Size = new System.Drawing.Size(149, 22);
             this.AboutUsButton.Text = "О программе";
             this.AboutUsButton.Click += new System.EventHandler(this.AboutUsButton_Click);
             // 
@@ -184,10 +185,10 @@ namespace notebook
             this.ClientSize = new System.Drawing.Size(800, 455);
             this.Controls.Add(this.fieldEdit);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Notebook version 0.0.1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ExitForm);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
