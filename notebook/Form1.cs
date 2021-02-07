@@ -13,7 +13,7 @@ namespace notebook
 {
     public partial class Form1 : Form
     {
-        public string head = "" + " - " + "Notebook version 0.9.0.0";
+        public string head = "" + " - " + "Notebook";
         Notebook notebook;
         public Form1()
         {
@@ -37,6 +37,7 @@ namespace notebook
         private void CreateButton_Click(object sender, EventArgs e)
         {
             notebook.Create();
+            this.Text = "" + " - " + "Notebook";
         }
 
         private void OpenButton_Click(object sender, EventArgs e)
@@ -82,13 +83,27 @@ namespace notebook
             AboutBox1 aboutUs = new AboutBox1();
             aboutUs.ShowDialog();
         }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            fieldEdit.Clear();
+        }
+
+        private void MoveButton_Click(object sender, EventArgs e)
+        {
+            MoveForm move = new MoveForm();
+            Rows.moveResolution = false;
+            move.ShowDialog();
+            notebook.MoveRows();
+        }
     }
 }
 
 public class Notebook
 {
     string nameFile;
-    RichTextBox fieldEdit;
+    RichTextBox fieldEdit;    
+    string boxRow = "";
 
     public string NameFile
     {
@@ -99,6 +114,16 @@ public class Notebook
     {
         nameFile = "";
         this.fieldEdit = fieldEdit;
+    }
+
+    public void MoveRows()
+    {
+        if(Rows.moveResolution == true)
+        {
+            boxRow = fieldEdit.Lines[Rows.firstRow - 1];            
+            fieldEdit.Lines[Rows.firstRow - 1] = fieldEdit.Lines[Rows.secondRow - 1];
+            fieldEdit.Lines[Rows.secondRow - 1] = boxRow;
+        }
     }
 
     public bool ASaveBloknot()
@@ -144,7 +169,7 @@ public class Notebook
         
         if(ASaveBloknot() == true)
         {            
-            formText = nameFile + " - " + "Notebook version 0.9.0.0";
+            formText = nameFile + " - " + "Notebook";
         }
     }
     public void SaveAs(ref string formText)
@@ -152,7 +177,7 @@ public class Notebook
         nameFile = "";
         if(ASaveBloknot() == true)
         {
-            formText = nameFile + " - " + "Notebook version 0.9.0.0";
+            formText = nameFile + " - " + "Notebook";
         }
     }
     public bool AOpenBloknot()
@@ -179,7 +204,7 @@ public class Notebook
         }
         if (AOpenBloknot() == true)
         {
-            formText = nameFile + " - " + "Notebook version 0.9.0.0";
+            formText = nameFile + " - " + "Notebook";
         }
         else AOpenBloknot();   
 
@@ -220,4 +245,11 @@ public class Notebook
             exit = true; ;
         }        
     }
+}
+
+public class Rows
+{
+    public static int firstRow;
+    public static int secondRow;
+    public static bool moveResolution;
 }
