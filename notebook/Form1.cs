@@ -91,7 +91,7 @@ namespace notebook
 
         private void MoveButton_Click(object sender, EventArgs e)
         {
-            MoveForm move = new MoveForm();
+            MoveForm move = new MoveForm();            
             Rows.moveResolution = false;
             move.ShowDialog();
             notebook.MoveRows();
@@ -102,8 +102,8 @@ namespace notebook
 public class Notebook
 {
     string nameFile;
-    RichTextBox fieldEdit;    
-    string boxRow = "";
+    RichTextBox fieldEdit;
+    string boxText;
 
     public string NameFile
     {
@@ -118,12 +118,22 @@ public class Notebook
 
     public void MoveRows()
     {
-        if(Rows.moveResolution == true)
+        if (Rows.moveResolution == true)
         {
-            boxRow = fieldEdit.Lines[Rows.firstRow - 1];            
-            fieldEdit.Lines[Rows.firstRow - 1] = fieldEdit.Lines[Rows.secondRow - 1];
-            fieldEdit.Lines[Rows.secondRow - 1] = boxRow;
-        }
+            try
+            {
+                string[] temp = fieldEdit.Lines;
+                boxText = temp[Rows.firstRow - 1];
+                temp[Rows.firstRow - 1] = temp[Rows.secondRow - 1];
+                temp[Rows.secondRow - 1] = boxText;
+                fieldEdit.Lines = temp;
+            }
+            catch
+            {
+                MessageBox.Show("Указанной строки не существует.", "Ошибка.");
+            }
+            
+        }       
     }
 
     public bool ASaveBloknot()
