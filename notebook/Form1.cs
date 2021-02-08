@@ -127,6 +127,7 @@ public class Notebook
                 temp[Rows.firstRow - 1] = temp[Rows.secondRow - 1];
                 temp[Rows.secondRow - 1] = boxText;
                 fieldEdit.Lines = temp;
+                fieldEdit.Modified = true;
             }
             catch
             {
